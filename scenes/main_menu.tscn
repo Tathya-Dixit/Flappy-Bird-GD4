@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://4r6mbsfe4bc3"]
+[gd_scene load_steps=8 format=3 uid="uid://bk1gcdyt1u7jo"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_8r0h2"]
-[ext_resource type="Texture2D" uid="uid://42ay8m87ycoa" path="res://Assets/textures/backgroundblured.png" id="1_44wr0"]
-[ext_resource type="FontFile" uid="uid://c4fw5ha2m2gb2" path="res://Assets/fonts/flappyfont.TTF" id="2_y2ghg"]
-[ext_resource type="Texture2D" uid="uid://7lcs8nt3bprv" path="res://Assets/textures/message.png" id="4_1vhfx"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vwnth"]
+[ext_resource type="Texture2D" uid="uid://42ay8m87ycoa" path="res://Assets/textures/backgroundblured.png" id="2_ctcw4"]
+[ext_resource type="FontFile" uid="uid://c4fw5ha2m2gb2" path="res://Assets/fonts/flappyfont.TTF" id="3_230ta"]
+[ext_resource type="Texture2D" uid="uid://7lcs8nt3bprv" path="res://Assets/textures/message.png" id="4_aecth"]
 
 [sub_resource type="Animation" id="Animation_4gl0w"]
 length = 0.001
@@ -43,12 +43,12 @@ _data = {
 }
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_8r0h2")
+script = ExtResource("1_vwnth")
 
 [node name="Backgroundblured" type="Sprite2D" parent="."]
 position = Vector2(360, 641)
 scale = Vector2(1.5, 1.49649)
-texture = ExtResource("1_44wr0")
+texture = ExtResource("2_ctcw4")
 
 [node name="Play" type="Button" parent="."]
 offset_left = 241.0
@@ -56,14 +56,14 @@ offset_top = 1064.0
 offset_right = 463.0
 offset_bottom = 1173.0
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_y2ghg")
+theme_override_fonts/font = ExtResource("3_230ta")
 theme_override_font_sizes/font_size = 100
 text = "PLAY"
 
 [node name="Message" type="Sprite2D" parent="."]
 position = Vector2(362.5, 535)
 scale = Vector2(1.87319, 2.245)
-texture = ExtResource("4_1vhfx")
+texture = ExtResource("4_aecth")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

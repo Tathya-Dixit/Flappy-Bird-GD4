@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://buu071gotkb0l"]
+[gd_scene load_steps=7 format=3 uid="uid://pg7jy6a0ooaj"]
 
-[ext_resource type="Script" path="res://intro_scene.gd" id="1_rwqy2"]
-[ext_resource type="Texture2D" uid="uid://brr7oiw1hwxbd" path="res://Assets/textures/GameIntroScreenMobile.png" id="1_vw8bq"]
+[ext_resource type="Script" path="res://scripts/intro_scene.gd" id="1_ll8if"]
+[ext_resource type="Texture2D" uid="uid://brr7oiw1hwxbd" path="res://Assets/textures/GameIntroScreenMobile.png" id="2_dbo2w"]
 
 [sub_resource type="Animation" id="Animation_4aoms"]
 length = 0.001
@@ -58,12 +58,12 @@ _data = {
 }
 
 [node name="IntroScene" type="Node2D"]
-script = ExtResource("1_rwqy2")
+script = ExtResource("1_ll8if")
 
 [node name="GameIntroScreenMobile" type="Sprite2D" parent="."]
 position = Vector2(360, 640)
 scale = Vector2(0.24, 0.23997)
-texture = ExtResource("1_vw8bq")
+texture = ExtResource("2_dbo2w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -224.0

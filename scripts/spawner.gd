@@ -1,6 +1,6 @@
 extends Node2D
 
-var Obs = preload("res://Obstacle.tscn")
+var Obs = preload("res://scenes/Obstacle.tscn")
 signal obsSpawned(obs)
 
 

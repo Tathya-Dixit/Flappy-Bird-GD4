@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b8nv2tjwdvnqw"]
 
 [ext_resource type="Texture2D" uid="uid://cup6t21j4hwq8" path="res://Assets/textures/bird.png" id="1_2mmgp"]
-[ext_resource type="Script" path="res://Character.gd" id="1_3hp2b"]
+[ext_resource type="Script" path="res://scripts/Character.gd" id="1_3hp2b"]
 [ext_resource type="AudioStream" uid="uid://cagx5e13m3vwk" path="res://Assets/audio/wing.wav" id="3_7fsss"]
 [ext_resource type="AudioStream" uid="uid://cadpanec6lxdu" path="res://Assets/audio/die.wav" id="4_22b0t"]
 [ext_resource type="AudioStream" uid="uid://0yy6gam2o2wp" path="res://Assets/audio/hit.wav" id="5_ous77"]

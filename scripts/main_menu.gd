@@ -6,4 +6,4 @@ func _ready():
 	$ColorRect.visible = false
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Main.tscn")
+	get_tree().change_scene_to_file("res://scenes/Main.tscn")
