@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://buu071gotkb0l"]
+
+[ext_resource type="Script" path="res://intro_scene.gd" id="1_rwqy2"]
+[ext_resource type="Texture2D" uid="uid://brr7oiw1hwxbd" path="res://Assets/textures/GameIntroScreenMobile.png" id="1_vw8bq"]
+
+[sub_resource type="Animation" id="Animation_4aoms"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_di1fu"]
+resource_name = "fadeout"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jx88o"]
+resource_name = "rollanim"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxbjo"]
+_data = {
+"RESET": SubResource("Animation_4aoms"),
+"fadeout": SubResource("Animation_di1fu"),
+"rollanim": SubResource("Animation_jx88o")
+}
+
+[node name="IntroScene" type="Node2D"]
+script = ExtResource("1_rwqy2")
+
+[node name="GameIntroScreenMobile" type="Sprite2D" parent="."]
+position = Vector2(360, 640)
+scale = Vector2(0.24, 0.23997)
+texture = ExtResource("1_vw8bq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -224.0
+offset_top = -119.0
+offset_right = 1001.0
+offset_bottom = 1437.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qxbjo")
+}

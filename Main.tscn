@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://btbbyufva8ouo"]
+
+[ext_resource type="Texture2D" uid="uid://d2vjndxpbvul0" path="res://Assets/textures/background.png" id="1_0la0p"]
+[ext_resource type="Script" path="res://Main.gd" id="1_t3ufo"]
+[ext_resource type="PackedScene" uid="uid://b8nv2tjwdvnqw" path="res://Character.tscn" id="2_4bix2"]
+[ext_resource type="PackedScene" uid="uid://btipopq1chx1y" path="res://hud.tscn" id="2_7du1i"]
+[ext_resource type="PackedScene" uid="uid://dwbve204mkstf" path="res://spawner.tscn" id="2_hq15y"]
+[ext_resource type="PackedScene" uid="uid://cxlfdueyxfylc" path="res://Ground.tscn" id="3_c5tuo"]
+[ext_resource type="PackedScene" uid="uid://h25o6yuuvqva" path="res://game_over_scene.tscn" id="7_cqtst"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_t3ufo")
+
+[node name="hud" parent="." instance=ExtResource("2_7du1i")]
+
+[node name="GameOverScene" parent="." instance=ExtResource("7_cqtst")]
+visible = false
+
+[node name="BackGround" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(354, 640)
+scale = Vector2(1.5, 1.49883)
+texture = ExtResource("1_0la0p")
+
+[node name="Spawner" parent="." instance=ExtResource("2_hq15y")]
+position = Vector2(777, 11)
+
+[node name="Node2D" parent="." instance=ExtResource("3_c5tuo")]
+position = Vector2(4, 0)
+
+[node name="Character" parent="." instance=ExtResource("2_4bix2")]
+position = Vector2(280, 625)
+
+[connection signal="dead" from="Character" to="." method="_on_character_dead"]
+[connection signal="started" from="Character" to="." method="_on_character_started"]
