@@ -39,7 +39,7 @@ func obstacleSpawned(obs):
 func scorepoint():
 	score += 1
 	hud.setScore(score)
-	if score<=100:
+	if score<=120:
 		spawner.updatetimeout(score)
 	
 

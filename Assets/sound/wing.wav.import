@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://vmxq5bocq1o8"
-path="res://.godot/imported/swoosh.wav-fd16a59e43de0e9201f12e7598efd33f.sample"
+uid="uid://cagx5e13m3vwk"
+path="res://.godot/imported/wing.wav-599d75e7961d6a6e0813bc56c620396b.sample"
 
 [deps]
 
-source_file="res://Assets/audio/swoosh.wav"
-dest_files=["res://.godot/imported/swoosh.wav-fd16a59e43de0e9201f12e7598efd33f.sample"]
+source_file="res://Assets/sound/wing.wav"
+dest_files=["res://.godot/imported/wing.wav-599d75e7961d6a6e0813bc56c620396b.sample"]
 
 [params]
 

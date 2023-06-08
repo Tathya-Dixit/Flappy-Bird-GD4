@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8nv2tjwdvnqw"]
+[gd_scene load_steps=12 format=3 uid="uid://cuc6k2q36vwws"]
 
 [ext_resource type="Texture2D" uid="uid://cup6t21j4hwq8" path="res://Assets/textures/bird.png" id="1_2mmgp"]
 [ext_resource type="Script" path="res://scripts/Character.gd" id="1_3hp2b"]
-[ext_resource type="AudioStream" uid="uid://cagx5e13m3vwk" path="res://Assets/audio/wing.wav" id="3_7fsss"]
-[ext_resource type="AudioStream" uid="uid://cadpanec6lxdu" path="res://Assets/audio/die.wav" id="4_22b0t"]
-[ext_resource type="AudioStream" uid="uid://0yy6gam2o2wp" path="res://Assets/audio/hit.wav" id="5_ous77"]
+[ext_resource type="AudioStream" uid="uid://cagx5e13m3vwk" path="res://Assets/sound/wing.wav" id="3_gvl6k"]
+[ext_resource type="AudioStream" uid="uid://cadpanec6lxdu" path="res://Assets/sound/die.wav" id="4_6sol0"]
+[ext_resource type="AudioStream" uid="uid://0yy6gam2o2wp" path="res://Assets/sound/hit.wav" id="5_hnhd5"]
+[ext_resource type="AudioStream" uid="uid://t6btndpi3p8o" path="res://Assets/sound/point.wav" id="6_q23bq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ja2vd"]
 radius = 14.0
@@ -123,10 +124,13 @@ libraries = {
 }
 
 [node name="FlapAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_7fsss")
+stream = ExtResource("3_gvl6k")
 
 [node name="DieAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_22b0t")
+stream = ExtResource("4_6sol0")
 
 [node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_ous77")
+stream = ExtResource("5_hnhd5")
+
+[node name="Score" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_q23bq")

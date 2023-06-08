@@ -8,6 +8,7 @@ var gravity = 3
 @onready var flapaud = $FlapAudio
 @onready var hitaud = $HitAudio
 @onready var dieaud = $DieAudio
+@onready var scoreaud = $Score
 @export var Force = -700
 var isalive = true
 
@@ -35,8 +36,8 @@ func start():
 
 
 func flap():
-	anim.play("Flap")
 	flapaud.play()
+	anim.play("Flap")
 	gravity_scale = gravity
 	linear_velocity.y = Force
 	angular_velocity = -10
@@ -45,9 +46,9 @@ func flap():
 func die():
 	if !isalive: return
 	isalive = false
-	emit_signal("dead")
 	hitaud.play()
+	emit_signal("dead")
 	dieaud.play()
 	
 func score():
-	pass
+	scoreaud.play()
