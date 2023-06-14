@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfxavs84ivoxs"]
+
+[ext_resource type="Script" path="res://scripts/night_game_over_scene.gd" id="1_ayk77"]
+[ext_resource type="Texture2D" uid="uid://bu3wn72a6njsb" path="res://Assets/textures/backgroundblurednight.png" id="2_0ikay"]
+[ext_resource type="Texture2D" uid="uid://shddt3daub5u" path="res://Assets/textures/gameover.png" id="3_sjpdb"]
+[ext_resource type="FontFile" uid="uid://c4fw5ha2m2gb2" path="res://Assets/fonts/flappyfont.TTF" id="4_7dk8n"]
+
+[node name="nightGameOver" type="CanvasLayer"]
+script = ExtResource("1_ayk77")
+
+[node name="Backgroundblured" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(657, 1306.92)
+scale = Vector2(5.89453, 5.09014)
+texture = ExtResource("2_0ikay")
+
+[node name="Gameover" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(362, 248)
+scale = Vector2(2.19792, 3.29365)
+texture = ExtResource("3_sjpdb")
+
+[node name="CurrentScore" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 532.0
+offset_right = 720.0
+offset_bottom = 636.0
+theme_override_fonts/font = ExtResource("4_7dk8n")
+theme_override_font_sizes/font_size = 100
+text = "CURRENT : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestScore" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 661.0
+offset_right = 720.0
+offset_bottom = 765.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_7dk8n")
+theme_override_font_sizes/font_size = 100
+text = "BEST : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -376.0
+offset_right = 286.0
+offset_bottom = -251.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_7dk8n")
+theme_override_font_sizes/font_size = 70
+action_mode = 0
+text = "R E S T A R T"
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -220.0
+offset_right = 178.0
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_7dk8n")
+theme_override_font_sizes/font_size = 70
+action_mode = 0
+text = "M E N U
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cutpk6f3eqkpd"]
+
+[ext_resource type="Script" path="res://scripts/nightscene.gd" id="1_ir2qa"]
+[ext_resource type="Texture2D" uid="uid://5s4to2blcy0h" path="res://Assets/textures/Mobile - Flappy Bird - Version 12 Sprites.png" id="1_t1ceu"]
+[ext_resource type="PackedScene" uid="uid://btipopq1chx1y" path="res://scenes/hud.tscn" id="2_mtr5d"]
+[ext_resource type="PackedScene" uid="uid://dfxavs84ivoxs" path="res://scenes/night_game_over_scene.tscn" id="3_g04cc"]
+[ext_resource type="PackedScene" uid="uid://cxlfdueyxfylc" path="res://scenes/Ground.tscn" id="5_y0isu"]
+[ext_resource type="PackedScene" uid="uid://cuc6k2q36vwws" path="res://scenes/Character.tscn" id="6_80g6k"]
+[ext_resource type="PackedScene" uid="uid://bievw4rfcxxua" path="res://scenes/night_spawner.tscn" id="7_tum03"]
+
+[node name="nightscene" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_ir2qa")
+
+[node name="hud" parent="." instance=ExtResource("2_mtr5d")]
+
+[node name="nightGameOver" parent="." instance=ExtResource("3_g04cc")]
+visible = false
+
+[node name="Mobile-FlappyBird-Version12Sprites" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(361, 640)
+scale = Vector2(5, 5)
+texture = ExtResource("1_t1ceu")
+region_enabled = true
+region_rect = Rect2(146, 0, 144, 256)
+
+[node name="nightSpawner" parent="." instance=ExtResource("7_tum03")]
+position = Vector2(759, 10)
+
+[node name="Node2D" parent="." instance=ExtResource("5_y0isu")]
+position = Vector2(4, 0)
+
+[node name="Character" parent="." instance=ExtResource("6_80g6k")]
+position = Vector2(280, 625)
+
+[connection signal="dead" from="Character" to="." method="_on_character_dead"]
+[connection signal="started" from="Character" to="." method="_on_character_started"]

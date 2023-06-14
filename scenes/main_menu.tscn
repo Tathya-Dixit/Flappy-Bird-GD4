@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bk1gcdyt1u7jo"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vwnth"]
-[ext_resource type="Texture2D" uid="uid://42ay8m87ycoa" path="res://Assets/textures/backgroundblured.png" id="2_ctcw4"]
+[ext_resource type="Texture2D" uid="uid://brm1aa28ga2mh" path="res://Assets/textures/mainmenubg.png" id="2_lu3lh"]
 [ext_resource type="FontFile" uid="uid://c4fw5ha2m2gb2" path="res://Assets/fonts/flappyfont.TTF" id="3_230ta"]
 [ext_resource type="Texture2D" uid="uid://7lcs8nt3bprv" path="res://Assets/textures/message.png" id="4_aecth"]
 
@@ -48,17 +48,39 @@ script = ExtResource("1_vwnth")
 [node name="Backgroundblured" type="Sprite2D" parent="."]
 position = Vector2(360, 641)
 scale = Vector2(1.5, 1.49649)
-texture = ExtResource("2_ctcw4")
+texture = ExtResource("2_lu3lh")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -21.0
+offset_top = -14.0
+offset_right = 756.0
+offset_bottom = 1293.0
+color = Color(0.360784, 0.360784, 0.360784, 0.447059)
+metadata/_edit_use_anchors_ = true
 
 [node name="Play" type="Button" parent="."]
-offset_left = 241.0
-offset_top = 1064.0
-offset_right = 463.0
-offset_bottom = 1173.0
+offset_left = 41.0
+offset_top = 1038.0
+offset_right = 291.0
+offset_bottom = 1148.0
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_230ta")
-theme_override_font_sizes/font_size = 100
-text = "PLAY"
+theme_override_font_sizes/font_size = 80
+text = "DAY"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Play2" type="Button" parent="."]
+offset_left = 425.0
+offset_top = 1038.0
+offset_right = 675.0
+offset_bottom = 1148.0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_230ta")
+theme_override_font_sizes/font_size = 80
+text = "NIGHT"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Message" type="Sprite2D" parent="."]
 position = Vector2(362.5, 535)
@@ -79,3 +101,4 @@ offset_bottom = 1332.0
 color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Play2" to="." method="_on_play_2_pressed"]

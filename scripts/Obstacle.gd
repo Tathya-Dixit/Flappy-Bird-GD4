@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var Speed = 289
+@export var Speed = 438
 signal score
 
 func _physics_process(delta):

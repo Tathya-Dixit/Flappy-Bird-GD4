@@ -18,8 +18,8 @@ func spawnObstacle():
 	obs.position.y = randi()%500+350
 	emit_signal("obsSpawned",obs)
 
-func updatetimeout(score):
-	$Timer.wait_time-=score/100
+func updatetimeout():
+	$Timer.wait_time-=0.01
 	
 
 func start():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuc6k2q36vwws"]
+[gd_scene load_steps=13 format=3 uid="uid://cuc6k2q36vwws"]
 
 [ext_resource type="Texture2D" uid="uid://cup6t21j4hwq8" path="res://Assets/textures/bird.png" id="1_2mmgp"]
 [ext_resource type="Script" path="res://scripts/Character.gd" id="1_3hp2b"]
@@ -101,6 +101,8 @@ _data = {
 "RESET": SubResource("Animation_kt63p")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6arj"]
+
 [node name="Character" type="RigidBody2D"]
 mass = 0.01
 gravity_scale = 0.0
@@ -134,3 +136,6 @@ stream = ExtResource("5_hnhd5")
 
 [node name="Score" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_q23bq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k6arj")

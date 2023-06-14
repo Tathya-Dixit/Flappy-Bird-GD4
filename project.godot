@@ -13,8 +13,11 @@ config_version=5
 config/name="Flappy Bird"
 run/main_scene="res://scenes/intro_scene.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+boot_splash/image="res://Assets/textures/flash.png"
+boot_splash/fullsize=false
+config/icon="res://Assets/textures/icon.png"
 
 [display]
 

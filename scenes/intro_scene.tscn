@@ -1,78 +1,90 @@
-[gd_scene load_steps=7 format=3 uid="uid://pg7jy6a0ooaj"]
+[gd_scene load_steps=8 format=3 uid="uid://pg7jy6a0ooaj"]
 
 [ext_resource type="Script" path="res://scripts/intro_scene.gd" id="1_ll8if"]
-[ext_resource type="Texture2D" uid="uid://brr7oiw1hwxbd" path="res://Assets/textures/GameIntroScreenMobile.png" id="2_dbo2w"]
+[ext_resource type="Texture2D" uid="uid://cgdxioyn3hg44" path="res://Assets/textures/introstuff.png" id="3_lumcb"]
+[ext_resource type="Texture2D" uid="uid://dttrs60vxdump" path="res://Assets/textures/introend.png" id="4_1rf2s"]
 
-[sub_resource type="Animation" id="Animation_4aoms"]
+[sub_resource type="Animation" id="Animation_jv2j3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Introend:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_1rf2s")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Introend:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_di1fu"]
+[sub_resource type="Animation" id="Animation_xm0uk"]
+resource_name = "fadein"
+length = 3.0
+
+[sub_resource type="Animation" id="Animation_yrhw3"]
 resource_name = "fadeout"
-length = 3.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Introend:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Introend:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_jx88o"]
-resource_name = "rollanim"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxbjo"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ol4l0"]
 _data = {
-"RESET": SubResource("Animation_4aoms"),
-"fadeout": SubResource("Animation_di1fu"),
-"rollanim": SubResource("Animation_jx88o")
+"RESET": SubResource("Animation_jv2j3"),
+"fadein": SubResource("Animation_xm0uk"),
+"fadeout": SubResource("Animation_yrhw3")
 }
 
 [node name="IntroScene" type="Node2D"]
 script = ExtResource("1_ll8if")
 
-[node name="GameIntroScreenMobile" type="Sprite2D" parent="."]
-position = Vector2(360, 640)
-scale = Vector2(0.24, 0.23997)
-texture = ExtResource("2_dbo2w")
+[node name="Introstuff" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(358, 638)
+scale = Vector2(3.39906, 3.36815)
+texture = ExtResource("3_lumcb")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -224.0
-offset_top = -119.0
-offset_right = 1001.0
-offset_bottom = 1437.0
-color = Color(0, 0, 0, 1)
+[node name="Introend" type="Sprite2D" parent="."]
+position = Vector2(360, 638.501)
+scale = Vector2(1, 1.01016)
+texture = ExtResource("4_1rf2s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_qxbjo")
+"": SubResource("AnimationLibrary_ol4l0")
 }

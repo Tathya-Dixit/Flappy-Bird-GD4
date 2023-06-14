@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7o6173weouyl"]
+
+[ext_resource type="Texture2D" uid="uid://5s4to2blcy0h" path="res://Assets/textures/Mobile - Flappy Bird - Version 12 Sprites.png" id="1_8ol8w"]
+[ext_resource type="Script" path="res://scripts/nightobstacle.gd" id="1_li3ga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0gej"]
+size = Vector2(34, 348.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhlja"]
+size = Vector2(73.9999, 715)
+
+[node name="nightobstacle" type="Node2D" groups=["obstacles"]]
+script = ExtResource("1_li3ga")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(17, 0.75)
+shape = SubResource("RectangleShape2D_c0gej")
+
+[node name="pipe" type="Area2D" parent="." groups=["death"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="pipe" groups=["obstacles"]]
+texture_filter = 1
+position = Vector2(0.5, 501)
+scale = Vector2(3.26923, 4.5)
+texture = ExtResource("1_8ol8w")
+region_enabled = true
+region_rect = Rect2(0, 323, 26, 160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pipe"]
+position = Vector2(3.05176e-05, 502.5)
+shape = SubResource("RectangleShape2D_hhlja")
+
+[node name="pipe2" type="Area2D" parent="." groups=["death"]]
+
+[node name="Sprite2D2" type="Sprite2D" parent="pipe2"]
+texture_filter = 1
+position = Vector2(-0.499939, -499)
+rotation = -3.14159
+scale = Vector2(2.89842, 4.45)
+texture = ExtResource("1_8ol8w")
+region_enabled = true
+region_rect = Rect2(0, 323, 26, 160)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="pipe2"]
+position = Vector2(3.05176e-05, -501)
+shape = SubResource("RectangleShape2D_hhlja")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="pipe" to="." method="_on_pipe_body_entered"]
+[connection signal="body_entered" from="pipe2" to="." method="_on_pipe_body_entered"]
